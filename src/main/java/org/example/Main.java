@@ -4,7 +4,6 @@
  * CS 151 Object-Oriented
 
  */
-
 package org.example;
 class Candidate
 {
@@ -15,18 +14,13 @@ class Candidate
 
     public void setName(String N)
     {
-
-        // This keyword refers to current instance itself
         Candidate.candidateName =N;
     }
-
-
     Candidate()
     {
         Candidate.candidateName = candidateName;
     }
 }
-
 class getVoter
 {
     final int voterId = 1;
@@ -36,12 +30,8 @@ class getVoter
 
     public void setName(String N)
     {
-
-        // This keyword refers to current instance itself
         getVoter.voterName =N;
     }
-
-
     getVoter()
     {
         Voter.voterName = voterName;
@@ -53,7 +43,6 @@ class Voter
     static String voterName;
     public static String getName() {return voterName.toUpperCase();}
     boolean hasVoted;
-
     Voter(String voterName, boolean hasVoted)
     {
         Voter.voterName = voterName;
