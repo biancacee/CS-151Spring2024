@@ -5,78 +5,23 @@
 
  */
 package org.example;
-class Candidate
-{
-    final int candidateKey = 1;
-    static String candidateName;
-    public static String getName() {return candidateName.toUpperCase();}
-    String party;
 
-    public void setName(String N)
-    {
-        Candidate.candidateName =N;
-    }
-    Candidate()
-    {
-        Candidate.candidateName = candidateName;
-    }
-}
-class getVoter
-{
-    final int voterId = 1;
-    static String voterName;
-    public static String getName() {return voterName.toUpperCase();}
-    String party;
+import java.util.Locale;
 
-    public void setName(String N)
-    {
-        getVoter.voterName =N;
-    }
-    getVoter()
-    {
-        Voter.voterName = voterName;
-    }
-}
-class Voter
-{
-    final int voterKey = 1;
-    static String voterName;
-    public static String getName() {return voterName.toUpperCase();}
-    boolean hasVoted;
-    Voter(String voterName, boolean hasVoted)
-    {
-        Voter.voterName = voterName;
-        this.hasVoted = true;
-    }
-}
-class Utility
-{
-    static void printInfo()
-    {
-        System.out.println(Candidate.candidateName);
-        System.out.println(Voter.voterName);
-    }
-}
-class Person {
+public class Main{
     public static void main(String[] args)
     {
-        System.out.println("\nCandidate name printed below using setter and getter:");
-        Candidate person1 = new Candidate();
-        person1.setName("Milo Cervantes");
-        System.out.println(Candidate.getName());
+        Candidate candidate1 = new Candidate("Milo Cervantes","Love");
+        Voter voter1 = new Voter("Snuggles Cervantes","Free");
 
-        System.out.println("\nVoter name printed below using setter and getter:");
-        getVoter person1_v2 = new getVoter();
-        person1_v2.setName("Milo Cervantes");
-        System.out.println(getVoter.getName());
+        Utility.printInfoCandidate();
+        Utility.printInfoVoter();
 
-        System.out.println("\nVoter information printed below using:");
-        Voter person1Vote = new Voter("Bianca Cervantes", true);
-        System.out.println("Voter Name:" + Voter.voterName
-                + "\nHas Voted:" + person1Vote.hasVoted);
-
-        System.out.println("\nCandidate and Voter information printed using static method below: ");
-        Utility printInfo = new Utility();
-        Utility.printInfo();
+        Utility person = new Utility();
+        person.setFirstName("Meilin ");
+        person.setLastName("Lee");
+        System.out.println(person.getFirstName().toUpperCase());
+        System.out.println(person.getLastName().toUpperCase());
     }
+
 }
